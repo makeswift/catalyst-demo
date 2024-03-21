@@ -9,6 +9,9 @@ const nextConfig = {
       {
         hostname: process.env.BIGCOMMERCE_CDN_HOSTNAME ?? '*.bigcommerce.com',
       },
+      {
+        hostname: "images.ctfassets.net"
+      }
     ],
   },
   transpilePackages: ['@bigcommerce/components'],
