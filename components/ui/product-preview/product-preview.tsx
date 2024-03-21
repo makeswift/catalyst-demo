@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { forwardRef, Ref } from 'react';
+import { Ref, forwardRef } from 'react';
 
 import { cn } from '~/lib/utils';
 
 import { Button } from '../button';
+import Link from 'next/link';
 
-export interface Props {
+export type Props = {
   className?: string;
   link?: {
     href: string;
@@ -15,7 +15,7 @@ export interface Props {
   image?: { url: string; dimensions: { width: number; height: number } };
   imageAlt: string;
   buttonText?: string;
-}
+};
 
 export const ProductPreview = forwardRef(function ProductPreview(
   { className, link, image, imageAlt, buttonText }: Props,
@@ -23,16 +23,16 @@ export const ProductPreview = forwardRef(function ProductPreview(
 ) {
   return (
     <Link
-      className={cn(className, 'group relative block aspect-[3/4] w-full overflow-hidden')}
-      href={link?.href ?? '#'}
       ref={ref}
+      href={link?.href ?? '#'}
+      className={cn(className, 'group relative block aspect-[3/4] w-full overflow-hidden')}
     >
       {image ? (
         <Image
-          alt={imageAlt}
-          className="scale-100 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-          fill
           src={image.url}
+          alt={imageAlt}
+          fill
+          className="scale-100 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
         />
       ) : (
         <div className="aspect-[3/4] w-full bg-gray-100" />

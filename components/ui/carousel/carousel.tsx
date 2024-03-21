@@ -74,7 +74,7 @@ interface CarouselSlideProps extends ComponentPropsWithRef<'li'> {
 const CarouselSlide = forwardRef<ElementRef<'li'>, CarouselSlideProps>(
   ({ children, className, index, ...props }, ref) => {
     const [, emblaApi] = useContext(CarouselContext);
-    const [, setSlidesInView] = useState<number[]>([0]);
+    const [slidesInView, setSlidesInView] = useState<number[]>([0]);
 
     useEffect(() => {
       if (!emblaApi) return;

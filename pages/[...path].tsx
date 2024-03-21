@@ -50,7 +50,7 @@ export default function Page({ snapshot }: Props) {
   return (
     <>
       <PagesHeader />
-      <MakeswiftPage runtime={runtime} snapshot={snapshot} />
+      <MakeswiftPage snapshot={snapshot} runtime={runtime} />
       <Footer />
     </>
   );

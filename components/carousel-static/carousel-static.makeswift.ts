@@ -1,6 +1,7 @@
-import { Image, Link, List, Shape, Style, TextInput } from '@makeswift/runtime/controls';
-import { forwardNextDynamicRef } from '@makeswift/runtime/next';
 import dynamic from 'next/dynamic';
+
+import { List, Image, Shape, Style, TextInput, Link } from '@makeswift/runtime/controls';
+import { forwardNextDynamicRef } from '@makeswift/runtime/next';
 
 import { runtime } from '~/lib/makeswift/runtime';
 

@@ -1,4 +1,4 @@
-import { forwardRef, Ref, useId } from 'react';
+import { Ref, forwardRef, useId } from 'react';
 
 import {
   Carousel,
@@ -7,15 +7,15 @@ import {
   CarouselPreviousIndicator,
   CarouselSlide,
 } from '@bigcommerce/components/carousel';
-import { cn } from '~/lib/utils';
 
 import { ProductPreview, type Props as ProductPreviewProps } from '../ui/product-preview';
+import { cn } from '~/lib/utils';
 
-interface Props {
+type Props = {
   className: string;
   title?: string;
   products: ProductPreviewProps[];
-}
+};
 
 export const CarouselStatic = forwardRef(function CarouselStatic(
   { className, title, products }: Props,
@@ -51,11 +51,11 @@ export const CarouselStatic = forwardRef(function CarouselStatic(
             key={index}
           >
             <ProductPreview
-              buttonText={product.buttonText}
+              key={index}
               image={product.image}
               imageAlt={product.imageAlt}
-              key={index}
               link={product.link}
+              buttonText={product.buttonText}
             />
           </CarouselSlide>
         ))}

@@ -1,8 +1,8 @@
+import { runtime } from '~/lib/makeswift/runtime';
 import { Image, Link, Style, TextInput } from '@makeswift/runtime/controls';
+
 import { forwardNextDynamicRef } from '@makeswift/runtime/next';
 import dynamic from 'next/dynamic';
-
-import { runtime } from '~/lib/makeswift/runtime';
 
 export const props = {
   className: Style(),
