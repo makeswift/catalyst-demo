@@ -7,6 +7,8 @@ import { PagesHeader } from '~/components/header/client';
 import { getConfig } from '~/lib/makeswift/config';
 import { runtime } from '~/lib/makeswift/runtime';
 import '~/lib/makeswift/components';
+import { ContentfulProvider } from '~/app/contexts/contentful-context';
+import { getAllBlogPosts } from '~/lib/contenful/api';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -35,6 +37,8 @@ export async function getStaticProps(ctx: GetStaticPropsContext<{ path: string[]
     siteVersion: Makeswift.getSiteVersion(ctx.previewData),
   });
 
+  const blogPosts = await getAllBlogPosts();
+
   if (snapshot == null) {
     return { notFound: true };
   }
@@ -42,16 +46,17 @@ export async function getStaticProps(ctx: GetStaticPropsContext<{ path: string[]
   return {
     props: {
       snapshot,
+      blogPosts,
     },
   };
 }
 
-export default function Page({ snapshot }: Props) {
+export default function Page({ snapshot, blogPosts }: Props) {
   return (
-    <>
+    <ContentfulProvider blogPosts={blogPosts}>
       <PagesHeader />
       <MakeswiftPage snapshot={snapshot} runtime={runtime} />
       <Footer />
-    </>
+    </ContentfulProvider>
   );
 }
