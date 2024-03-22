@@ -30,6 +30,7 @@ export const fetchQuickSearch = async ({ categoryId }: { categoryId?: number }) 
 
   const response = await fetch(
     `/api/quick-search?categoryId=${categoryId}&imageHeight=500&imageWidth=500&limit=10`,
+    { next: { revalidate: 15 } },
   );
 
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

@@ -12,6 +12,7 @@ async function fetchGraphQL(query: string): Promise<unknown> {
       Authorization: `Bearer ${config.contentful.accessToken}`,
     },
     body: JSON.stringify({ query }),
+    next: { revalidate: 15 },
   }).then((response) => response.json());
 }
 
