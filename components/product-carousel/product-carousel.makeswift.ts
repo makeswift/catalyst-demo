@@ -1,4 +1,4 @@
-import { Combobox, TextInput } from '@makeswift/runtime/controls';
+import { Combobox, Style, TextInput } from '@makeswift/runtime/controls';
 import { forwardNextDynamicRef } from '@makeswift/runtime/next';
 import dynamic from 'next/dynamic';
 
@@ -21,6 +21,7 @@ const fetchCategories = async (): Promise<Category[]> => {
 
 export const props = {
   title: TextInput({ label: 'Title', defaultValue: 'Products', selectAll: true }),
+  className: Style(),
   categoryId: Combobox({
     label: 'Category',
     async getOptions(query) {

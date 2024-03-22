@@ -25,7 +25,7 @@ const Carousel = forwardRef<ElementRef<'section'>, ComponentPropsWithRef<'sectio
       <CarouselContext.Provider value={[emblaRef, emblaApi]}>
         <section
           aria-roledescription="carousel"
-          className={cn('relative overflow-x-hidden pb-16', className)}
+          className={cn('relative overflow-x-hidden', className)}
           ref={ref}
           {...props}
         >

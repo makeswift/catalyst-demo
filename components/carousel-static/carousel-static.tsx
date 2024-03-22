@@ -25,14 +25,14 @@ export const CarouselStatic = forwardRef(function CarouselStatic(
 
   if (products.length === 0) {
     return (
-      <div className={cn(className, 'w-full bg-gray-100 p-6 text-center')}>
+      <div className={cn(className, 'w-full bg-gray-100 text-center')}>
         No products have been added
       </div>
     );
   }
 
   return (
-    <Carousel aria-labelledby="Carousel" className={cn(className, 'pb-0')} ref={ref}>
+    <Carousel aria-labelledby="Carousel" className={cn(className)} ref={ref}>
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-black lg:text-4xl" id="title">
           {title}

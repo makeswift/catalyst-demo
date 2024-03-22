@@ -44,7 +44,7 @@ export const ProductCardCarousel = ({
   }, []);
 
   return (
-    <Carousel aria-labelledby="title" className="mb-14">
+    <Carousel aria-labelledby="title">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-black lg:text-4xl" id="title">
           {title}
