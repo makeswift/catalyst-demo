@@ -14,7 +14,7 @@ export const props = {
     label: 'Tag',
     async getOptions(query) {
       const response = await fetch('/api/contentful/tags');
-      const body = await response.json();
+      const body: unknown = await response.json();
       const tags = z.object({ tags: z.array(tagSchema) }).parse(body).tags;
 
       return tags
