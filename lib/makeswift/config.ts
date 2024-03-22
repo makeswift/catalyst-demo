@@ -11,6 +11,10 @@ export interface Config {
     siteApiKey: string;
     productTemplatePathname: string;
   };
+  contentful: {
+    accessToken: string;
+    spaceId: string;
+  };
 }
 
 function getEnvVarOrThrow(key: string): string {
@@ -40,6 +44,10 @@ export function getConfig(): Config {
     makeswift: {
       siteApiKey: getEnvVarOrThrow('MAKESWIFT_SITE_API_KEY'),
       productTemplatePathname: '/__product__',
+    },
+    contentful: {
+      spaceId: getEnvVarOrThrow('CONTENTFUL_SPACE_ID'),
+      accessToken: getEnvVarOrThrow('CONTENTFUL_ACCESS_TOKEN'),
     },
   };
 }
