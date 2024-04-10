@@ -3,7 +3,7 @@ import { forwardNextDynamicRef } from '@makeswift/runtime/next';
 import dynamic from 'next/dynamic';
 import { z } from 'zod';
 
-import { tagSchema } from '~/lib/contenful/api';
+import { tagSchema } from '~/lib/contentful/api';
 import { runtime } from '~/lib/makeswift/runtime';
 
 export const props = {

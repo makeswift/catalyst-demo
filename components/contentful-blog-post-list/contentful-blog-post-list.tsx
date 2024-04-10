@@ -1,5 +1,5 @@
 import { useContentfulContext } from '~/app/contexts/contentful-context';
-import { Tag } from '~/lib/contenful/api';
+import { Tag } from '~/lib/contentful/api';
 
 import { ContentfulBlogPostCard } from '../contenful-blog-post-card';
 

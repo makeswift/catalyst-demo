@@ -5,7 +5,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { ContentfulProvider } from '~/app/contexts/contentful-context';
 import { Footer } from '~/components/footer/client';
 import { PagesHeader } from '~/components/header/client';
-import { getAllBlogPosts } from '~/lib/contenful/api';
+import { getAllBlogPosts } from '~/lib/contentful/api';
 import { getConfig } from '~/lib/makeswift/config';
 import { runtime } from '~/lib/makeswift/runtime';
 import '~/lib/makeswift/components';
