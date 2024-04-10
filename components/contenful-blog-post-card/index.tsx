@@ -10,7 +10,7 @@ import {
   BlogPostCard as ComponentsBlogPostCard,
 } from '@bigcommerce/components/blog-post-card';
 import { Link } from '~/components/link';
-import { BlogPost } from '~/lib/contenful/api';
+import { BlogPost } from '~/lib/contentful/api';
 
 interface BlogPostCardProps {
   blogPost: BlogPost;

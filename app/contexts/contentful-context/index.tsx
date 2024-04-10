@@ -2,7 +2,7 @@
 
 import { createContext, PropsWithChildren, useContext } from 'react';
 
-import { BlogPost } from '~/lib/contenful/api';
+import { BlogPost } from '~/lib/contentful/api';
 
 type Props = { blogPosts: BlogPost[] } & PropsWithChildren;
 
